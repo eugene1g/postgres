@@ -531,6 +531,11 @@ sql.begin(async sql => {
 
 Do note that you can often achieve the same result using [`WITH` queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html) instead of using transactions.
 
+## Realtime insert, update, delete `subscribe(pattern, fn)`
+
+Postgres.js implements the logical replication protocol of PostgreSQL to support subscription to realtime information about `insert`, `update` and `delete` operations.
+
+
 ## Types
 
 You can add ergonomic support for custom types, or simply pass an object with a `{ type, value }` signature that contains the Postgres `oid` for the type and the correctly serialized value.
